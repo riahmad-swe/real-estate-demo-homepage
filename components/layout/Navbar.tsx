@@ -8,7 +8,7 @@ export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-black/5">
+		<nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-black/5 bg-[#fff2db]/60">
 			<div className="px-6 lg:px-48">
 				<div className="flex items-center justify-between h-20">
 					{/* Logo Section */}
@@ -22,7 +22,7 @@ export default function Navbar() {
 							className="w-10 h-10"
 						/>
 						<span className="font-bold text-xl tracking-wide">
-							ANB Unique Real State
+							ANB Unique Real Estate
 						</span>
 					</Link>
 

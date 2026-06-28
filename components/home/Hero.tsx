@@ -33,7 +33,7 @@ export default function Hero() {
 	};
 
 	return (
-		<section className="relative min-h-[80vh] pt-16 overflow-hidden pb-16 lg:pb-0">
+		<section className="relative py-16 overflow-hidden pb-16 lg:pb-0">
 			{/* Trust Badge (Kept exactly as you had it) */}
 			<div className="flex justify-center mb-10">
 				<div className="inline-flex gap-2 px-4 py-2 rounded-full border border-blue-500/50 shadow-md">
