@@ -1,16 +1,15 @@
 import Hero from "@/components/home/Hero";
 import ComplianceBadges from "@/components/home/ComplianceBadges";
 import Projects from "@/components/home/Projects";
-import MaterialTransparency from "@/components/home/MaterialTransparency";
+import Quality from "@/components/home/Quality";
 import VirtualTour from "@/components/home/VirtualTour";
 import PropertyFinder from "@/components/home/PropertyFinder";
 import InvestmentCalculator from "@/components/home/InvestmentCalculator";
 import LandownerCorner from "@/components/home/LandownerCorner";
-import Leadership from "@/components/home/Leadership";
+import Team from "@/components/home/Team";
 import ResidentReviews from "@/components/home/ResidentReviews";
 import FAQSection from "@/components/home/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
-import Footer from "@/components/home/Footer";
 import ScrollToTop from "@/components/home/ScrollToTop";
 
 export default function Home() {
@@ -19,8 +18,8 @@ export default function Home() {
 			<Hero />
 			<ComplianceBadges />
 			<Projects />
-			<MaterialTransparency />
-			<Leadership />
+			<Quality />
+			<Team />
 			<VirtualTour />
 			<PropertyFinder />
 			<InvestmentCalculator />
@@ -28,7 +27,6 @@ export default function Home() {
 			<ResidentReviews />
 			<FAQSection />
 			<ContactSection />
-			<Footer />
 			<ScrollToTop />
 		</main>
 	);

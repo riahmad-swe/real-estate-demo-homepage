@@ -43,7 +43,10 @@ export default function InvestmentCalculator() {
 	};
 
 	return (
-		<section className="py-24 bg-slate-950 relative border-t border-white/5">
+		<section
+			id="investment-calculator"
+			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5"
+		>
 			{/* Background ambient elements */}
 			<div className="absolute top-1/4 left-0 w-100 h-100 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 right-0 w-125 h-125 bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none" />

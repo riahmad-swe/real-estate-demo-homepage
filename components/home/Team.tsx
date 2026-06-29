@@ -116,12 +116,15 @@ const leaders = [
 	},
 ];
 
-export default function Leadership() {
+export default function Team() {
 	const [activeId, setActiveId] = useState(1);
 	const activeLeader = leaders.find((l) => l.id === activeId) || leaders[0];
 
 	return (
-		<section className="py-24 bg-slate-950 relative border-t border-white/5">
+		<section
+			id="team"
+			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5"
+		>
 			<div className="max-w-7xl mx-auto px-6">
 				<div className="mb-16">
 					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">

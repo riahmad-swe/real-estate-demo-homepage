@@ -9,7 +9,6 @@ import {
 	GraduationCap,
 	Hospital,
 	Train,
-	CheckCircle2,
 } from "lucide-react";
 
 // Bilingual Demo Data around K M Max Tower, Upashahar, Rajshahi
@@ -47,7 +46,10 @@ export default function PropertyFinderMap() {
 	const [bhkFilter, setBhkFilter] = useState("All");
 
 	return (
-		<section className="py-24 bg-slate-950 border-t border-white/5 relative">
+		<section
+			id="neighborhood"
+			className="pt-16 md:pt-24 bg-slate-950 border-t border-white/5 relative"
+		>
 			<div className="max-w-350 mx-auto px-6">
 				{/* Header Section */}
 				<div className="mb-12">

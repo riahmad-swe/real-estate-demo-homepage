@@ -9,7 +9,7 @@ export default function Projects() {
 	);
 
 	return (
-		<section className="py-24 lg:px-48 px-6">
+		<section className="pt-16 md:pt-24 lg:px-48 px-6">
 			<h2 className="text-4xl font-bold mb-12 text-center">
 				Active Projects
 			</h2>

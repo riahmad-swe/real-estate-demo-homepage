@@ -75,9 +75,12 @@ const labReports = [
 	},
 ];
 
-export default function MaterialTransparency() {
+export default function Quality() {
 	return (
-		<section className="relative py-24 bg-slate-950 overflow-hidden">
+		<section
+			id="quality"
+			className="relative pt-16 md:pt-24 bg-slate-950 overflow-hidden"
+		>
 			{/* Background Ambient Glow for eye-catching effect */}
 			<div className="absolute top-0 right-0 w-125 h-125 bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-0 w-125 h-125 bg-emerald-600/5 blur-[150px] rounded-full pointer-events-none" />

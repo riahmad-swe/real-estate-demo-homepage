@@ -76,7 +76,10 @@ export default function ResidentReviews() {
 	const activeReview = reviews[activeIndex];
 
 	return (
-		<section className="py-24 bg-slate-950 relative border-t border-white/5 overflow-hidden">
+		<section
+			id="reviews"
+			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5 overflow-hidden"
+		>
 			{/* Ambient Luxury Lighting */}
 			<div className="absolute top-0 right-1/4 w-150 h-150 bg-amber-500/5 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-1/4 w-100 h-100 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />

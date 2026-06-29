@@ -171,7 +171,10 @@ export default function FAQSection() {
 	};
 
 	return (
-		<section className="py-24 bg-slate-950 relative border-t border-white/5">
+		<section
+			id="faq"
+			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5"
+		>
 			{/* Subtle Background Elements */}
 			<div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-200 h-100 bg-emerald-900/10 blur-[150px] rounded-full pointer-events-none" />
 

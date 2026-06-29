@@ -27,7 +27,10 @@ export default function ContactSection() {
 	};
 
 	return (
-		<section className="py-24 bg-slate-950 relative border-t border-white/5 overflow-hidden">
+		<section
+			id="contact"
+			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5 overflow-hidden"
+		>
 			{/* Premium Ambient Lighting */}
 			<div className="absolute top-0 right-0 w-125 h-125 bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-0 w-125 h-125 bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
