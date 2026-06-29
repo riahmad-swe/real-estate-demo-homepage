@@ -40,14 +40,14 @@ const badges = [
 
 export default function ComplianceBadges() {
 	return (
-		<section className="w-full bg-slate-950 border-y border-white/5 py-10">
+		<section className="w-full py-24">
 			<div className="max-w-7xl mx-auto px-6">
 				{/* Section Header (Bilingual) */}
-				<div className="text-center mb-8">
-					<p className="text-sm font-semibold tracking-widest text-slate-400 uppercase">
+				<div className="text-center mb-4">
+					<p className="text-xl lg:text-2xl font-bold tracking-wide uppercase">
 						Trusted & Recognized By
 					</p>
-					<p className="text-xs text-slate-500 mt-1 font-medium">
+					<p className="lg:text-lg mt-1">
 						যাদের স্বীকৃতি ও অনুমোদনে আমরা বিশ্বস্ত
 					</p>
 				</div>
@@ -59,29 +59,29 @@ export default function ComplianceBadges() {
 						return (
 							<div
 								key={badge.id}
-								className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-white/5 border border-white/5 transition-all duration-300 ease-in-out hover:bg-white/10 hover:border-emerald-500/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] cursor-default"
+								className="group relative flex flex-col items-center justify-center p-4 rounded-2xl bg-white/5 border border-white/5 transition-all duration-300 ease-in-out hover:bg-white/10 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] cursor-default"
 							>
 								{/* Icon acts as Logo placeholder */}
-								<div className="p-4 bg-slate-900 rounded-full mb-4 text-slate-400 group-hover:text-emerald-400 group-hover:scale-110 transition-all duration-300 shadow-inner">
+								<div className="p-4 bg-orange-200 rounded-full mb-2 text-slate-600 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300 shadow-inner">
 									<Icon className="w-8 h-8" />
 								</div>
 
 								{/* English Text */}
-								<h4 className="text-sm md:text-base font-bold text-white text-center mb-1 group-hover:text-emerald-300 transition-colors">
+								<h4 className="text-sm md:text-base font-bold text-center mb-1 text-slate-700 group-hover:text-blue-500 transition-colors">
 									{badge.titleEn}
 								</h4>
-								<p className="text-[10px] md:text-xs text-slate-400 text-center mb-3">
+								<p className="text-xs md:text-sm text-slate-600 text-center mb-3">
 									{badge.descEn}
 								</p>
 
 								{/* Divider */}
-								<div className="w-8 h-px bg-white/10 mb-3 group-hover:bg-emerald-500/50 transition-colors" />
+								<div className="w-8 h-px bg-black/10 mb-3 group-hover:bg-blue-500/50 transition-colors" />
 
 								{/* Bengali Text */}
-								<h4 className="text-sm md:text-base font-bold text-slate-300 text-center mb-1">
+								<h4 className="text-sm md:text-base font-bold text-slate-700 text-center mb-1">
 									{badge.titleBn}
 								</h4>
-								<p className="text-[10px] md:text-xs text-slate-500 text-center">
+								<p className="text-xs md:text-sm text-slate-600 text-center">
 									{badge.descBn}
 								</p>
 							</div>

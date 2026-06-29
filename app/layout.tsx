@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
+import SmoothScroll from "@/components/home/SmoothScroll";
 
 const inter = Inter({
 	subsets: ["latin"],
@@ -24,10 +25,12 @@ export default function RootLayout({
 			className={`${inter.variable} h-full antialiased`}
 		>
 			<body className="font-sans min-h-full flex flex-col bg-[#fff2db] text-[#0b0909]">
-				<header>
-					<Navbar />
-				</header>
-				{children}
+				<SmoothScroll>
+					<header>
+						<Navbar />
+					</header>
+					{children}
+				</SmoothScroll>
 			</body>
 		</html>
 	);

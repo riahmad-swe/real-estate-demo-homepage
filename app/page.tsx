@@ -11,6 +11,7 @@ import ResidentReviews from "@/components/home/ResidentReviews";
 import FAQSection from "@/components/home/FAQSection";
 import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/home/Footer";
+import ScrollToTop from "@/components/home/ScrollToTop";
 
 export default function Home() {
 	return (
@@ -28,6 +29,7 @@ export default function Home() {
 			<FAQSection />
 			<ContactSection />
 			<Footer />
+			<ScrollToTop />
 		</main>
 	);
 }

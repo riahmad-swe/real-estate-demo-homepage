@@ -75,7 +75,7 @@ export default function ContactSection() {
 							<div className="space-y-4">
 								<p className="flex items-start gap-3 text-sm text-slate-300">
 									<MapPin className="w-4 h-4 text-emerald-400 shrink-0 mt-1" />
-									Level 5, K M Max Tower, Upashahar Mor,
+									Level 2, K M Max Tower, Upashahar Mor,
 									Rajshahi, Bangladesh
 								</p>
 								<p className="flex items-center gap-3 text-sm text-slate-300">
