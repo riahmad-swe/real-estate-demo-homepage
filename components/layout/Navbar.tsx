@@ -46,7 +46,7 @@ export default function Navbar() {
 			className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xs bg-white/75"
 		>
 			{/* ডাইনামিক প্যাডিং: স্ক্রিন অনুযায়ী রেসপন্সিভ */}
-			<div className="px-4 lg:px-12 xl:px-24 2xl:px-48">
+			<div className="px-4 lg:px-24 2xl:px-48">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo Section */}
 					<Link

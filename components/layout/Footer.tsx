@@ -11,7 +11,7 @@ export default function Footer() {
 			{/* Ambient Footer Glow */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-75 bg-emerald-900/10 blur-[120px] rounded-full pointer-events-none" />
 
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				{/* Top Section: Cordial Thank You & Newsletter */}
 				<div className="grid lg:grid-cols-2 gap-12 items-center pb-16 border-b border-white/10">
 					<div>

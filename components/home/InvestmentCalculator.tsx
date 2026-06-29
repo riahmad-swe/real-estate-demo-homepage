@@ -51,7 +51,7 @@ export default function InvestmentCalculator() {
 			<div className="absolute top-1/4 left-0 w-100 h-100 bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 right-0 w-125 h-125 bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none" />
 
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16">
 					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
@@ -78,7 +78,7 @@ export default function InvestmentCalculator() {
 					{/* Left Column: Inputs */}
 					<div className="flex flex-col gap-8">
 						<div>
-							<h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
+							<h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
 								<Calculator className="w-6 h-6 text-blue-400" />{" "}
 								Investment Details
 							</h3>
@@ -128,7 +128,7 @@ export default function InvestmentCalculator() {
 								<label className="block text-xs font-bold text-slate-400 uppercase tracking-wider">
 									Initial Investment (BDT)
 								</label>
-								<span className="text-2xl font-bold text-white">
+								<span className="text-xl font-bold text-white">
 									{formatBDT(investment)}
 								</span>
 							</div>
@@ -204,7 +204,7 @@ export default function InvestmentCalculator() {
 								<p className="text-xs text-slate-400 mb-2">
 									Projected Monthly Rental Income
 								</p>
-								<p className="text-2xl lg:text-3xl font-bold text-blue-400">
+								<p className="text-xl lg:text-3xl font-bold text-blue-400">
 									{formatBDT(monthlyRent)}{" "}
 									<span className="text-sm text-slate-500 font-medium">
 										/ month

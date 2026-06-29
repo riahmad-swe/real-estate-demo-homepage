@@ -8,6 +8,8 @@ import {
 	Droplets,
 	Zap,
 	Eye,
+	Calendar,
+	FileDigit,
 } from "lucide-react";
 
 // Bilingual Dummy Data for Material Brands
@@ -79,52 +81,56 @@ export default function Quality() {
 	return (
 		<section
 			id="quality"
-			className="relative pt-16 md:pt-24 bg-slate-950 overflow-hidden"
+			className="relative pt-16 md:pt-24 overflow-hidden"
 		>
 			{/* Background Ambient Glow for eye-catching effect */}
 			<div className="absolute top-0 right-0 w-125 h-125 bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-0 w-125 h-125 bg-emerald-600/5 blur-[150px] rounded-full pointer-events-none" />
 
-			<div className="relative z-10 max-w-7xl mx-auto px-6">
+			<div className="relative z-10 px-4 lg:px-24 2xl:px-48">
 				{/* Section Header */}
-				<div className="text-center max-w-3xl mx-auto mb-16">
-					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+				<div className="text-center max-w-3xl mx-auto mb-8">
+					<h2 className="text-2xl md:text-4xl font-bold mb-2 tracking-wide">
 						Uncompromised{" "}
-						<span className="bg-linear-to-r from-emerald-400 to-blue-500 bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">
 							Quality
 						</span>
 					</h2>
-					<p className="text-lg text-slate-400 font-medium">
+					<p className="text-sm md:text-lg text-slate-700 font-medium">
 						We do not hide what goes inside our walls. Transparency
 						is our core foundation.
 					</p>
-					<p className="text-sm text-slate-500 mt-2">
+					<p className="text-sm md:text-lg text-slate-700 mt-1">
 						আমাদের ভবনের প্রতিটি নির্মাণ সামগ্রী যাচাইকৃত এবং
 						আন্তর্জাতিক মানের।
 					</p>
 				</div>
 
 				{/* Part 1: Material Alliance Grid */}
-				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
 					{materialCategories.map((cat) => {
 						const Icon = cat.icon;
 						return (
 							<div
 								key={cat.id}
-								className="group p-6 rounded-3xl bg-white/5 border border-white/10 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg"
+								className="group p-4 md:p-5 rounded-3xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-black/5"
 							>
-								<div className="w-12 h-12 rounded-xl bg-slate-900 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/50 transition-colors">
-									<Icon className="w-6 h-6 text-slate-400 group-hover:text-emerald-400" />
+								<div className="flex flex-row md:flex-col gap-3 mb-2">
+									<div className="size-10 md:size-12 rounded-xl bg-blue-200 border border-white/10 flex items-center justify-center group-hover:bg-blue-500/15 group-hover:border-blue-500/50 transition-colors">
+										<Icon className="size-6 md:size-7 text-slate-600 group-hover:text-blue-500" />
+									</div>
+
+									<div>
+										<h3 className="text-sm md:text-xl font-bold group-hover:text-blue-500 transition-colors mb-0.5">
+											{cat.titleEn}
+										</h3>
+										<h4 className="text-xs font-medium">
+											{cat.titleBn}
+										</h4>
+									</div>
 								</div>
 
-								<h3 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">
-									{cat.titleEn}
-								</h3>
-								<h4 className="text-sm font-medium text-slate-400 mb-4">
-									{cat.titleBn}
-								</h4>
-
-								<p className="text-xs text-slate-500 mb-6 h-10">
+								<p className="text-xs md:text-[15px] text-slate-700 mb-3 md:mb-5">
 									{cat.descEn}
 								</p>
 
@@ -132,7 +138,7 @@ export default function Quality() {
 									{cat.brands.map((brand, idx) => (
 										<span
 											key={idx}
-											className="px-3 py-1 text-[11px] font-semibold tracking-wider uppercase rounded-full bg-slate-900 text-slate-300 border border-white/5"
+											className="px-3 py-1 text-[10px] md:text-[11px] font-semibold tracking-wider uppercase rounded-full bg-blue-200 text-slate-700 border border-white/5"
 										>
 											{brand}
 										</span>
@@ -144,22 +150,22 @@ export default function Quality() {
 				</div>
 
 				{/* Part 2: The Trust Vault (Lab Test Downloads) */}
-				<div className="relative rounded-3xl overflow-hidden p-.25 bg-linear-to-br from-white/10 via-white/5 to-emerald-500/30">
-					<div className="bg-slate-900 w-full h-full rounded-[23px] p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+				<div className="relative overflow-hidden">
+					<div className="w-full h-full flex flex-col md:flex-row gap-6 md:gap-12 items-center">
 						{/* Left Content */}
 						<div className="w-full md:w-1/3 text-left">
-							<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+							<div className="inline-flex items-center gap-2 px-2 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-500 text-xs font-bold uppercase tracking-wider mb-2 md:mb-4">
 								<FileText className="w-4 h-4" /> The Trust Vault
 							</div>
-							<h3 className="text-3xl font-bold text-white mb-3">
+							<h3 className="text-2xl font-bold mb-1 md:mb-3">
 								Lab Test Audits
 							</h3>
-							<p className="text-sm text-slate-400 mb-2">
+							<p className="text-sm text-slate-700 mb-2">
 								Download and verify our material strength
 								certificates directly from independent
 								authorities like BUET.
 							</p>
-							<p className="text-xs text-slate-500">
+							<p className="text-sm text-slate-700">
 								আমাদের ব্যবহৃত ম্যাটেরিয়ালগুলোর বুয়েট ল্যাব
 								টেস্ট রিপোর্ট সরাসরি ডাউনলোড করে যাচাই করুন।
 							</p>
@@ -170,27 +176,33 @@ export default function Quality() {
 							{labReports.map((report) => (
 								<div
 									key={report.id}
-									className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300"
+									className="group flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 rounded-2xl shadow-lg shadow-black/5 hover:shadow-black/10 hover:-translate-y-1 transition-all duration-300"
 								>
 									<div className="mb-4 sm:mb-0">
-										<h4 className="text-white font-semibold text-sm sm:text-base group-hover:text-blue-300 transition-colors">
+										<h4 className="font-semibold text-sm sm:text-base group-hover:text-blue-600 transition-colors">
 											{report.titleEn}
 										</h4>
-										<p className="text-slate-500 text-xs mt-1">
+										<p className="text-slate-700 text-sm mt-1">
 											{report.titleBn}
 										</p>
-										<div className="flex items-center gap-4 mt-2 text-[11px] text-slate-400 font-medium">
-											<span>Date: {report.date}</span>
-											<span>•</span>
-											<span>Size: {report.fileSize}</span>
+										<div className="flex items-center gap-4 mt-2 text-sm text-slate-600 font-medium">
+											<span className="flex items-center gap-1">
+												<Calendar className="w-4 h-4" />
+												Date: {report.date}
+											</span>
+
+											<span className="flex items-center gap-1">
+												<FileDigit className="w-4 h-4" />
+												Size: {report.fileSize}
+											</span>
 										</div>
 									</div>
 
 									<div className="flex gap-2 w-full sm:w-auto">
-										<button className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 text-white text-xs font-bold hover:bg-slate-700 transition-colors">
+										<button className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full bg-emerald-400 hover:bg-emerald-500 text-xs font-bold transition-all shadow-md shadow-black/40 active:shadow-sm">
 											<Eye className="w-4 h-4" /> View
 										</button>
-										<button className="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 text-white text-xs font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-900/50">
+										<button className="flex-1 sm:flex-none flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-full bg-blue-600 text-white text-xs font-bold hover:bg-blue-500 transition-all shadow-md shadow-black/40 active:shadow-sm">
 											<Download className="w-4 h-4" /> PDF
 										</button>
 									</div>

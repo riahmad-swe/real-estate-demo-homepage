@@ -35,7 +35,7 @@ export default function ContactSection() {
 			<div className="absolute top-0 right-0 w-125 h-125 bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-0 w-125 h-125 bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16">
 					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
@@ -146,7 +146,7 @@ export default function ContactSection() {
 								<div className="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mb-6">
 									<CalendarCheck className="w-10 h-10 text-blue-400" />
 								</div>
-								<h3 className="text-2xl font-bold text-white mb-2">
+								<h3 className="text-xl font-bold text-white mb-2">
 									Request Received!
 								</h3>
 								<p className="text-slate-400 text-sm">
@@ -158,7 +158,7 @@ export default function ContactSection() {
 						) : null}
 
 						<div className="mb-8">
-							<h3 className="text-2xl font-bold text-white mb-2">
+							<h3 className="text-xl font-bold text-white mb-2">
 								Book a Site Visit
 							</h3>
 							<p className="text-xs text-slate-400">

@@ -63,7 +63,7 @@ export default function VirtualTour() {
 			id="virtual-tour"
 			className="pt-16 md:pt-24 bg-slate-950 border-t border-white/5 relative"
 		>
-			<div className="max-w-7xl mx-auto px-6">
+			<div className="px-4 lg:px-24 2xl:px-48">
 				{/* Section Header */}
 				<div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
 					<div>

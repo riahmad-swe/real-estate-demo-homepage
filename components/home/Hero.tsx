@@ -52,7 +52,7 @@ export default function Hero() {
 					<h1 className="text-2xl md:text-4xl lg:text-6xl font-extrabold tracking-tight mb-3 md:mb-6 max-w-4xl max-md:text-center">
 						Building Your Dreams With{" "}
 						<br className="hidden md:block" />
-						<span className="bg-linear-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">
 							Uncompromised Trust
 						</span>
 					</h1>
@@ -68,7 +68,7 @@ export default function Hero() {
 					<div className="flex gap-8 mb-8 md:mb-12 text-center">
 						<div className="flex flex-col items-center rounded-2xl drop-shadow-md drop-shadow-black/30">
 							<Clock className="size-6 md:size-8 text-emerald-400 mb-1" />
-							<h3 className="text-xl md:text-2xl font-bold mb-1">
+							<h3 className="text-xl md:text-xl font-bold mb-1">
 								0%
 							</h3>
 							<p className="text-xs md:text-sm">
@@ -78,7 +78,7 @@ export default function Hero() {
 
 						<div className="flex flex-col items-center rounded-2xl drop-shadow-md drop-shadow-black/30">
 							<ShieldCheck className="size-6 md:size-8 text-emerald-400 mb-1" />
-							<h3 className="text-xl md:text-2xl font-bold mb-1">
+							<h3 className="text-xl md:text-xl font-bold mb-1">
 								Live
 							</h3>
 							<p className="text-xs md:text-sm">
@@ -88,7 +88,7 @@ export default function Hero() {
 
 						<div className="flex flex-col items-center rounded-2xl drop-shadow-md drop-shadow-black/30">
 							<CheckCircle className="size-6 md:size-8 text-emerald-400 mb-1" />
-							<h3 className="text-xl md:text-2xl font-bold mb-1">
+							<h3 className="text-xl md:text-xl font-bold mb-1">
 								100+
 							</h3>
 							<p className="text-xs md:text-sm">

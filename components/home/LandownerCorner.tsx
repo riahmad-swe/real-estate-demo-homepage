@@ -35,7 +35,7 @@ export default function LandownerCorner() {
 			{/* Background ambient glow */}
 			<div className="absolute top-1/2 left-1/4 w-125 h-125 bg-emerald-600/10 blur-[150px] rounded-full pointer-events-none transform -translate-y-1/2" />
 
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				<div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 					{/* Left Column: Value Proposition */}
 					<div className="flex flex-col gap-8">
@@ -117,7 +117,7 @@ export default function LandownerCorner() {
 								<div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
 									<ShieldCheck className="w-10 h-10 text-emerald-400" />
 								</div>
-								<h3 className="text-2xl font-bold text-white mb-2">
+								<h3 className="text-xl font-bold text-white mb-2">
 									Proposal Received!
 								</h3>
 								<p className="text-slate-400 text-sm">
@@ -129,7 +129,7 @@ export default function LandownerCorner() {
 						) : null}
 
 						<div className="mb-8">
-							<h3 className="text-2xl font-bold text-white mb-1">
+							<h3 className="text-xl font-bold text-white mb-1">
 								Land Details Form
 							</h3>
 							<p className="text-xs text-slate-400">

@@ -84,7 +84,7 @@ export default function ResidentReviews() {
 			<div className="absolute top-0 right-1/4 w-150 h-150 bg-amber-500/5 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-1/4 w-100 h-100 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-			<div className="max-w-7xl mx-auto px-6 relative z-10">
+			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				{/* Section Header */}
 				<div className="text-center max-w-3xl mx-auto mb-16">
 					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
@@ -179,7 +179,7 @@ export default function ResidentReviews() {
 
 									{/* Profile Details Overlay */}
 									<div className="absolute bottom-0 left-0 w-full p-8">
-										<h3 className="text-2xl font-bold text-white mb-1 drop-shadow-md">
+										<h3 className="text-xl font-bold text-white mb-1 drop-shadow-md">
 											{activeReview.nameEn}
 										</h3>
 										<p className="text-emerald-400 text-sm font-semibold mb-1">

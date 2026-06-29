@@ -19,7 +19,7 @@ export default function Projects() {
 						key={p.id}
 						className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:border-blue-500/50 transition-all"
 					>
-						<h3 className="text-2xl font-bold mb-4">{p.name}</h3>
+						<h3 className="text-xl font-bold mb-4">{p.name}</h3>
 						<button
 							onClick={() => setSelectedProject(p)}
 							className="text-blue-400 font-semibold hover:underline"

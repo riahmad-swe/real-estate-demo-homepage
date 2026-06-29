@@ -41,13 +41,16 @@ const badges = [
 export default function ComplianceBadges() {
 	return (
 		<section className="w-full pt-16 md:pt-24">
-			<div className="max-w-7xl mx-auto px-6">
+			<div className="px-4 lg:px-24 2xl:px-48">
 				{/* Section Header (Bilingual) */}
 				<div className="text-center mb-2 md:mb-4">
-					<p className="text-xl lg:text-2xl font-bold tracking-wide uppercase">
-						Trusted & Recognized By
+					<p className="text-2xl lg:text-4xl font-bold tracking-wide">
+						<span className="bg-linear-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">
+							Trusted
+						</span>{" "}
+						& Recognized By
 					</p>
-					<p className="lg:text-lg mt-1">
+					<p className="lg:text-xl mt-1">
 						যাদের স্বীকৃতি ও অনুমোদনে আমরা বিশ্বস্ত
 					</p>
 				</div>
@@ -62,7 +65,7 @@ export default function ComplianceBadges() {
 								className="group relative flex flex-col items-center justify-center p-3 md:p-4 rounded-2xl bg-white/5 border border-white/5 transition-all duration-300 ease-in-out hover:bg-white/10 hover:border-blue-500/30 hover:shadow-[0_0_20px_rgba(16,185,129,0.1)] cursor-default"
 							>
 								{/* Icon acts as Logo placeholder */}
-								<div className="p-4 bg-orange-200 rounded-full mb-2 text-slate-600 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300 shadow-inner">
+								<div className="p-4 bg-blue-200 rounded-full mb-2 text-slate-600 group-hover:text-blue-500 group-hover:scale-110 transition-all duration-300 shadow-inner">
 									<Icon className="w-8 h-8" />
 								</div>
 
