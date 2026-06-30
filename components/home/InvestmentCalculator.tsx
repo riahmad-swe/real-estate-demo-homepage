@@ -6,7 +6,6 @@ import {
 	TrendingUp,
 	Home,
 	Briefcase,
-	ArrowUpRight,
 	PieChart,
 } from "lucide-react";
 
