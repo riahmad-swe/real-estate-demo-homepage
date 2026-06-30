@@ -81,7 +81,7 @@ export default function Quality() {
 	return (
 		<section
 			id="quality"
-			className="relative pt-16 md:pt-24 overflow-hidden"
+			className="relative pt-8 md:pt-12 overflow-hidden"
 		>
 			{/* Background Ambient Glow for eye-catching effect */}
 			<div className="absolute top-0 right-0 w-125 h-125 bg-blue-600/5 blur-[150px] rounded-full pointer-events-none" />
