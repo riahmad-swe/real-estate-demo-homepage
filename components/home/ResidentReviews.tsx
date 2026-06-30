@@ -78,86 +78,85 @@ export default function ResidentReviews() {
 	return (
 		<section
 			id="reviews"
-			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5 overflow-hidden"
+			className="pt-16 md:pt-24 relative overflow-hidden"
 		>
 			{/* Ambient Luxury Lighting */}
 			<div className="absolute top-0 right-1/4 w-150 h-150 bg-amber-500/5 blur-[150px] rounded-full pointer-events-none" />
 			<div className="absolute bottom-0 left-1/4 w-100 h-100 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
+			<div className="lg:px-24 2xl:px-48 relative z-10">
 				{/* Section Header */}
-				<div className="text-center max-w-3xl mx-auto mb-16">
-					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
-						<Star className="w-4 h-4 fill-amber-400" /> Premium
+				<div className="max-md:px-4 text-center max-w-3xl mx-auto mb-6 md:mb-8">
+					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-orange-500 text-xs font-bold uppercase tracking-wider mb-2 md:mb-4">
+						<Star className="w-4 h-4 fill-orange-400" /> Premium
 						Experiences
 					</div>
-					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+					<h2 className="text-2xl md:text-4xl font-extrabold mb-2 tracking-tight">
 						Voices of Our{" "}
-						<span className="bg-linear-to-r from-amber-200 to-amber-500 bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
 							Esteemed Residents
 						</span>
 					</h2>
-					<p className="text-slate-400 text-sm font-medium">
-						Do not just take our word for it. Hear from the families
-						who trust us with their dreams.
+					<p className="text-slate-600 text-sm md:text-lg font-medium">
+						সম্মানিত সদস্যবৃন্দ যারা আমাদের উপর আস্থা রেখেছেন
 					</p>
 				</div>
 
 				{/* Interactive Editorial Layout */}
-				<div className="bg-slate-900/60 backdrop-blur-2xl border border-white/10 rounded-[2.5rem] p-8 md:p-12 lg:p-16 shadow-2xl">
-					<div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+				<div className="bg-linear-to-br from-slate-950 to-slate-800 backdrop-blur-2xl border border-white/10 md:rounded-[2.5rem] p-6 md:p-10 shadow-2xl">
+					<div className="grid lg:grid-cols-12 gap-4 lg:gap-16 items-center">
 						{/* Left: The Big Quote */}
 						<div className="lg:col-span-7 relative min-h-75 flex flex-col justify-center">
-							<Quote className="absolute -top-10 -left-6 w-24 h-24 text-white/5 transform -scale-x-100" />
+							<Quote className="absolute -top-4 md:-top-16 -left-4 md:-left-8 w-16 md:w-24 h-16 md:h-24 text-white/10 transform -scale-x-100" />
 
 							<div
 								key={activeReview.id}
 								className="animate-in fade-in slide-in-from-bottom-8 duration-700 relative z-10"
 							>
 								{/* 5-Star Rating */}
-								<div className="flex gap-1 mb-6">
+								<div className="flex gap-1 mb-3 md:mb-6">
 									{[...Array(activeReview.rating)].map(
 										(_, i) => (
 											<Star
 												key={i}
-												className="w-5 h-5 text-amber-400 fill-amber-400 drop-shadow-md"
+												className="w-4 md:w-5 h-4 md:h-5 text-amber-400 fill-amber-400 drop-shadow-md"
 											/>
 										),
 									)}
 								</div>
 
 								{/* English Quote */}
-								<p className="text-xl md:text-3xl font-medium text-white leading-snug mb-6">
+								<p className="text-sm md:text-xl font-medium text-white leading-snug mb-2 md:mb-4">
 									{activeReview.quoteEn}
 								</p>
 
 								{/* Bengali Quote */}
-								<p className="text-sm md:text-base text-slate-400 leading-relaxed font-medium mb-10 border-l-2 border-amber-500/50 pl-4">
+								<p className="text-[13px] md:text-base text-slate-300 leading-relaxed font-medium mb-4 md:mb-10 border-l-2 border-amber-500/70 pl-4">
 									{activeReview.quoteBn}
 								</p>
 
 								{/* Custom Navigation Controls built into the layout */}
-								<div className="flex items-center gap-4">
+								<div className="flex items-center justify-between md:justify-center gap-4">
 									<button
 										onClick={handlePrev}
-										className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 text-white transition-all"
+										className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 text-white transition-all"
 									>
 										<ChevronLeft className="w-5 h-5" />
 									</button>
-									<button
-										onClick={handleNext}
-										className="p-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 text-white transition-all"
-									>
-										<ChevronRight className="w-5 h-5" />
-									</button>
-									<div className="ml-4 flex gap-2">
+									<div className="flex gap-2">
 										{reviews.map((_, idx) => (
 											<div
 												key={idx}
-												className={`h-1.5 rounded-full transition-all duration-500 ${activeIndex === idx ? "w-8 bg-amber-400" : "w-2 bg-white/20"}`}
+												className={`h-1.5 rounded-full transition-all duration-500 ${activeIndex === idx ? "w-6 bg-amber-400/70" : "w-2 bg-white/20"}`}
 											/>
 										))}
 									</div>
+									<button
+										onClick={handleNext}
+										className="p-2 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-amber-500/50 text-white transition-all"
+									>
+										<ChevronRight className="w-5 h-5" />
+									</button>
 								</div>
 							</div>
 						</div>
@@ -169,7 +168,7 @@ export default function ResidentReviews() {
 								className="relative animate-in fade-in zoom-in-95 duration-700"
 							>
 								{/* Profile Image Wrapper */}
-								<div className="relative w-full aspect-square md:aspect: [4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+								<div className="relative w-full aspect-square md:aspect-5/4 rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
 									<img
 										src={activeReview.image}
 										alt={activeReview.nameEn}
@@ -178,25 +177,25 @@ export default function ResidentReviews() {
 									<div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent" />
 
 									{/* Profile Details Overlay */}
-									<div className="absolute bottom-0 left-0 w-full p-8">
-										<h3 className="text-xl font-bold text-white mb-1 drop-shadow-md">
+									<div className="absolute bottom-0 left-0 w-full p-4">
+										<h3 className="text-lg font-bold text-white drop-shadow-md">
 											{activeReview.nameEn}
 										</h3>
-										<p className="text-emerald-400 text-sm font-semibold mb-1">
+										<p className="text-emerald-400 text-sm font-semibold -mt-0.5 mb-1">
 											{activeReview.designationEn}
 										</p>
-										<p className="text-slate-400 text-[11px] mb-4">
+										<p className="text-slate-300 text-xs mb-2">
 											{activeReview.designationBn}
 										</p>
 
 										{/* Project Tag */}
-										<div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 w-full">
-											<MapPin className="w-4 h-4 text-amber-400 shrink-0" />
+										<div className="inline-flex items-center gap-2 p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 w-full">
+											<MapPin className="w-5 h-5 text-amber-400 shrink-0" />
 											<div className="overflow-hidden">
-												<p className="text-xs text-white font-medium truncate">
+												<p className="text-xs text-white font-medium">
 													{activeReview.projectEn}
 												</p>
-												<p className="text-[10px] text-slate-300 truncate">
+												<p className="text-[11px] text-slate-300">
 													{activeReview.projectBn}
 												</p>
 											</div>

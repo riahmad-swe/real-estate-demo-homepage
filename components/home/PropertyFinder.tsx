@@ -74,13 +74,13 @@ export default function PropertyFinderMap() {
 				</div>
 
 				{/* Main Split Layout: List & Map */}
-				<div className="grid lg:grid-cols-3 gap-8">
+				<div className="grid lg:grid-cols-3 gap-">
 					{/* Left Column: Property List */}
-					<div className="col-span-1 flex flex-col gap-4 overflow-y-auto pr-2">
+					<div className="col-span-1 flex flex-col gap-2 overflow-y-auto max-h-120 md:max-h-140 pr-2">
 						{demoProperties.map((property) => (
 							<div
 								key={property.id}
-								className="rounded-2xl overflow-hidden transition-all group cursor-pointer shadow-lg shadow-black/5 hover:shadow-black/10 relative h-64 md:h-72 w-full"
+								className="rounded-2xl overflow-hidden transition-all group cursor-pointer shadow-lg shadow-black/5 hover:shadow-black/10 relative min-h-56 md:min-h-64 w-full"
 							>
 								{/* Background Image Container */}
 								<img
@@ -123,7 +123,7 @@ export default function PropertyFinderMap() {
 					</div>
 
 					{/* Right Column: Interactive Map & Location Intelligence */}
-					<div className="col-span-1 lg:col-span-2 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group h-120 md:h-140">
+					<div className="col-span-1 lg:col-span-2 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl max-h-120 md:max-h-140 group">
 						{/* Google Maps Iframe (Centered on Upashahar, Rajshahi) */}
 						<iframe
 							src="https://maps.google.com/maps?q=K%20M%20Max%20Tower,%20Rajshahi&t=&z=15&ie=UTF8&iwloc=&output=embed"
