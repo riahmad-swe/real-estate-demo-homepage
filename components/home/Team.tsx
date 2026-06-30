@@ -167,7 +167,7 @@ export default function Team() {
 					</h2>
 				</div>
 
-				<div className="max-w-7xl mx-auto bg-slate-900 border border-white/10 rounded-0.5 p-4 lg:p-6 shadow-2xl rounded-3xl">
+				<div className="max-w-7xl mx-auto bg-slate-900 border border-white/10 rounded-0.5 p-4 lg:p-6 rounded-3xl shadow-[0_0_15px_6px_rgba(0,100,255,0.35)]">
 					<div className="grid lg:grid-cols-5 gap-4 md:gap-12 items-center">
 						<div className="lg:col-span-2 relative">
 							{/* টাচ ইভেন্টগুলো এই মেইন কন্টেইনারে অ্যাড করা হলো */}

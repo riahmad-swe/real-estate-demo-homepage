@@ -1,15 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-	Search,
-	MapPin,
-	Building2,
-	Bed,
-	GraduationCap,
-	Hospital,
-	Train,
-} from "lucide-react";
+import { Search, MapPin, GraduationCap, Hospital, Train } from "lucide-react";
 
 // Bilingual Demo Data around K M Max Tower, Upashahar, Rajshahi
 const demoProperties = [
@@ -21,7 +13,6 @@ const demoProperties = [
 		locationBn: "উপশহর মোড়, রাজশাহী",
 		price: "৳ ৮৫,০০,০০০",
 		size: "1850 sqft",
-		bhk: "3 BHK",
 		status: "Ready",
 		image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop",
 	},
@@ -33,7 +24,6 @@ const demoProperties = [
 		locationBn: "পদ্মা আ/এ, রাজশাহী",
 		price: "৳ ১,২০,০০,০০০",
 		size: "2200 sqft",
-		bhk: "4 BHK",
 		status: "Ongoing",
 		image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop",
 	},
@@ -43,116 +33,97 @@ export default function PropertyFinderMap() {
 	const [activeAmenity, setActiveAmenity] = useState<
 		"education" | "healthcare" | "transit" | "none"
 	>("none");
-	const [bhkFilter, setBhkFilter] = useState("All");
 
 	return (
 		<section
 			id="neighborhood"
-			className="pt-16 md:pt-24 bg-slate-950 border-t border-white/5 relative"
+			className="pt-16 md:pt-24 relative"
 		>
-			<div className="max-w-350 mx-auto px-6">
+			<div className="max-w-350 mx-auto px-4">
 				{/* Header Section */}
-				<div className="mb-12">
-					<h2 className="text-4xl font-extrabold text-white mb-3">
+				<div className="mb-6 text-center">
+					<h2 className="text-2xl lg:text-4xl font-extrabold mb-2">
 						Explore Your{" "}
-						<span className="text-emerald-400">Neighborhood</span>
+						<span className="bg-linear-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">
+							Neighborhood
+						</span>
 					</h2>
-					<p className="text-slate-400 text-sm">
+					<p className="text-slate-600 text-sm lg:text-base">
 						Find the perfect home with our advanced location
 						intelligence map. <br />
 						লোকেশন ইন্টেলিজেন্স ম্যাপের মাধ্যমে আপনার স্বপ্নের
-						প্রজেক্ট এবং তার আশেপাশের সুবিধাগুলো এক্সপ্লোর করুন।
+						প্রজেক্ট এবং তার আশেপাশের সুবিধাগুলো খুঁজে দেখুন।
 					</p>
 				</div>
 
 				{/* Top Filters Bar (Glassmorphism) */}
-				<div className="flex flex-col md:flex-row gap-4 mb-8 p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-lg">
-					<div className="flex-1 flex items-center bg-slate-900 border border-white/10 rounded-xl px-4 py-3">
+				<div className="flex flex-col md:flex-row gap-2 mb-8">
+					<div className="flex-1 flex items-center bg-white border border-black/15 rounded-xl px-4 py-3 shadow-md shadow-black/10">
 						<Search className="w-5 h-5 text-slate-400 mr-3" />
 						<input
 							type="text"
 							placeholder="Search location (e.g. Upashahar, Rajshahi)..."
-							className="bg-transparent border-none text-white w-full focus:outline-none text-sm placeholder:text-slate-500"
+							className="bg-transparent border-none w-full focus:outline-none text-sm placeholder:text-slate-400"
 							defaultValue="Upashahar Mor, Rajshahi"
 						/>
 					</div>
 
-					<div className="flex gap-4">
-						<select
-							className="bg-slate-900 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-emerald-500"
-							value={bhkFilter}
-							onChange={(e) => setBhkFilter(e.target.value)}
-						>
-							<option value="All">All BHK</option>
-							<option value="3 BHK">3 BHK</option>
-							<option value="4 BHK">4 BHK</option>
-						</select>
-
-						<button className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-8 py-3 rounded-xl transition-colors text-sm">
-							Search
-						</button>
-					</div>
+					<button className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-8 py-2 rounded-xl transition-colors shadow-md shadow-black/10">
+						Search
+					</button>
 				</div>
 
 				{/* Main Split Layout: List & Map */}
-				<div className="grid lg:grid-cols-3 gap-8 h-150">
+				<div className="grid lg:grid-cols-3 gap-8">
 					{/* Left Column: Property List */}
-					<div className="col-span-1 flex flex-col gap-4 overflow-y-auto pr-2 hide-scrollbar">
-						{demoProperties
-							.filter(
-								(p) =>
-									bhkFilter === "All" || p.bhk === bhkFilter,
-							)
-							.map((property) => (
-								<div
-									key={property.id}
-									className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-colors group cursor-pointer"
-								>
-									<div className="h-40 overflow-hidden relative">
-										<img
-											src={property.image}
-											alt={property.nameEn}
-											className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-										/>
-										<div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-emerald-400 border border-emerald-500/30">
-											{property.status}
-										</div>
-									</div>
-									<div className="p-5">
-										<h3 className="text-xl font-bold text-white mb-1">
+					<div className="col-span-1 flex flex-col gap-4 overflow-y-auto pr-2">
+						{demoProperties.map((property) => (
+							<div
+								key={property.id}
+								className="rounded-2xl overflow-hidden transition-all group cursor-pointer shadow-lg shadow-black/5 hover:shadow-black/10 relative h-64 md:h-72 w-full"
+							>
+								{/* Background Image Container */}
+								<img
+									src={property.image}
+									alt={property.nameEn}
+									className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+								/>
+
+								{/* Top-left Status Badge */}
+								<div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-blue-400 border border-blue-500/50 z-20">
+									{property.status}
+								</div>
+
+								{/* Bottom Gradient Overlay for Text Readability */}
+								<div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-900/40 to-transparent z-10 pointer-events-none" />
+
+								{/* Bottom Content Overlay (Text) */}
+								<div className="absolute bottom-0 left-0 w-full p-3 md:p-4 z-20 pointer-events-none flex items-end justify-between gap-4">
+									<div>
+										<h3 className="text-[15px] md:text-lg font-extrabold text-white drop-shadow-md tracking-tight">
 											{property.nameEn}
 										</h3>
-										<h4 className="text-xs text-slate-400 mb-3 font-medium">
+
+										{/* Using nameBn as the sub-title / role as per your layout */}
+										<h4 className="text-xs md:text-sm text-slate-300 font-bold uppercase tracking-wider -mt-0.5">
 											{property.nameBn}
 										</h4>
+									</div>
 
-										<div className="flex items-center text-slate-400 text-xs mb-4">
-											<MapPin className="w-3.5 h-3.5 mr-1 text-emerald-400" />{" "}
+									{/* Location (Optional, hiding it on very small screens to keep it clean like the image) */}
+									<div className="flex items-center text-slate-300 text-xs md:text-sm font-medium">
+										<MapPin className="w-4 h-4 mr-1 text-emerald-400 shrink-0" />
+										<span className="line-clamp-1">
 											{property.locationEn}
-										</div>
-
-										<div className="flex justify-between items-center border-t border-white/10 pt-4">
-											<span className="text-lg font-bold text-emerald-400">
-												{property.price}
-											</span>
-											<div className="flex gap-3 text-xs text-slate-300 font-medium">
-												<span className="flex items-center gap-1">
-													<Building2 className="w-3.5 h-3.5" />{" "}
-													{property.size}
-												</span>
-												<span className="flex items-center gap-1">
-													<Bed className="w-3.5 h-3.5" />{" "}
-													{property.bhk}
-												</span>
-											</div>
-										</div>
+										</span>
 									</div>
 								</div>
-							))}
+							</div>
+						))}
 					</div>
 
 					{/* Right Column: Interactive Map & Location Intelligence */}
-					<div className="col-span-1 lg:col-span-2 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group">
+					<div className="col-span-1 lg:col-span-2 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl group h-120 md:h-140">
 						{/* Google Maps Iframe (Centered on Upashahar, Rajshahi) */}
 						<iframe
 							src="https://maps.google.com/maps?q=K%20M%20Max%20Tower,%20Rajshahi&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -169,7 +140,7 @@ export default function PropertyFinderMap() {
 						/>
 
 						{/* Custom Location Intelligence Overlay (Simulated) */}
-						<div className="absolute top-6 left-6 z-10 flex flex-col gap-3">
+						<div className="absolute top-3 right-3 z-10 flex flex-col bg-slate-950/50 text-white rounded-xl backdrop-blur-sm overflow-hidden">
 							<button
 								onClick={() =>
 									setActiveAmenity(
@@ -178,14 +149,13 @@ export default function PropertyFinderMap() {
 											: "education",
 									)
 								}
-								className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all shadow-lg backdrop-blur-md border ${
+								className={`flex items-center gap-1.5 px-3 py-2 font-semibold text-xs transition-all ${
 									activeAmenity === "education"
-										? "bg-emerald-500 text-slate-900 border-emerald-400"
-										: "bg-slate-900/80 text-white border-white/10 hover:bg-slate-800"
+										? "bg-blue-500"
+										: "hover:bg-blue-500/50"
 								}`}
 							>
-								<GraduationCap className="w-4 h-4" /> Nearby
-								Schools
+								<GraduationCap className="w-4 h-4" /> Schools
 							</button>
 
 							<button
@@ -196,10 +166,10 @@ export default function PropertyFinderMap() {
 											: "healthcare",
 									)
 								}
-								className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all shadow-lg backdrop-blur-md border ${
+								className={`flex items-center gap-1.5 px-3 py-2 font-semibold text-xs transition-all ${
 									activeAmenity === "healthcare"
-										? "bg-blue-500 text-white border-blue-400"
-										: "bg-slate-900/80 text-white border-white/10 hover:bg-slate-800"
+										? "bg-blue-500"
+										: "hover:bg-blue-500/50"
 								}`}
 							>
 								<Hospital className="w-4 h-4" /> Hospitals
@@ -213,10 +183,10 @@ export default function PropertyFinderMap() {
 											: "transit",
 									)
 								}
-								className={`flex items-center gap-2 px-4 py-2.5 rounded-xl font-semibold text-xs transition-all shadow-lg backdrop-blur-md border ${
+								className={`flex items-center gap-1.5 px-3 py-2 font-semibold text-xs transition-all ${
 									activeAmenity === "transit"
-										? "bg-amber-500 text-slate-900 border-amber-400"
-										: "bg-slate-900/80 text-white border-white/10 hover:bg-slate-800"
+										? "bg-blue-500"
+										: "hover:bg-blue-500/50"
 								}`}
 							>
 								<Train className="w-4 h-4" /> Transit & Rail
@@ -225,8 +195,8 @@ export default function PropertyFinderMap() {
 
 						{/* Simulated Data Popup based on active amenity */}
 						{activeAmenity !== "none" && (
-							<div className="absolute bottom-6 right-6 z-10 bg-slate-900/95 backdrop-blur-md border border-white/10 p-5 rounded-2xl shadow-2xl w-64 animate-in slide-in-from-right-8 duration-300">
-								<h4 className="text-white font-bold mb-3 flex items-center gap-2">
+							<div className="absolute bottom-3 right-3 z-10 bg-slate-950/50 backdrop-blur-sm border border-white/10 p-3 rounded-2xl shadow-2xl w-64 animate-in slide-in-from-right-8 duration-300">
+								<h4 className="text-white font-bold mb-2 flex items-center gap-1.5 text-sm">
 									{activeAmenity === "education" && (
 										<>
 											<GraduationCap className="w-4 h-4 text-emerald-400" />{" "}
@@ -247,7 +217,7 @@ export default function PropertyFinderMap() {
 									)}
 								</h4>
 
-								<ul className="space-y-3">
+								<ul className="space-y-2">
 									{activeAmenity === "education" && (
 										<>
 											<li className="flex justify-between items-start text-xs">

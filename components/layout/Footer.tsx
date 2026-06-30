@@ -176,7 +176,7 @@ export default function Footer() {
 				{/* Bottom Section: Copyright */}
 				<div className="pt-8 mt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500 font-medium">
 					<p>
-						© {currentYear} ANB Unique Real State. All Rights
+						© {currentYear} ANB Unique Real Estate. All Rights
 						Reserved.
 					</p>
 					<p className="flex items-center gap-1">
