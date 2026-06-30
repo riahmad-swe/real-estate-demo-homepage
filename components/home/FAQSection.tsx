@@ -102,15 +102,11 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-	const [openId, setOpenId] = useState<number | null>(1); // 1st item open by default
+	const [openId, setOpenId] = useState<number | null>(null); // 1st item open by default
 
 	const toggleFaq = (id: number) => {
 		setOpenId(openId === id ? null : id);
 	};
-
-	// Splitting data for the 2-column layout as requested
-	const leftColumnFaqs = faqs.slice(0, 5);
-	const rightColumnFaqs = faqs.slice(5, 10);
 
 	// Reusable FAQ Item Component
 	const FaqCard = ({ faq }: { faq: (typeof faqs)[0] }) => {
@@ -118,30 +114,28 @@ export default function FAQSection() {
 
 		return (
 			<div
-				className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-					isOpen
-						? "bg-slate-900/80 border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.1)]"
-						: "bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10"
+				className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-linear-to-br from-slate-800 to-slate-950 group ${
+					isOpen ? "border-blue-500" : ""
 				}`}
 			>
 				<button
 					onClick={() => toggleFaq(faq.id)}
-					className="w-full flex items-center justify-between p-6 text-left focus:outline-none"
+					className={`w-full flex items-center justify-between p-4 ${isOpen ? "pb-0" : ""} text-left focus:outline-none`}
 				>
 					<div className="pr-4">
 						<h4
-							className={`text-base font-bold mb-1 transition-colors ${isOpen ? "text-emerald-400" : "text-white"}`}
+							className={`text-[13px] md:text-base font-bold mb-1 transition-colors ${isOpen ? "text-blue-400" : "text-white group-hover:text-blue-400"}`}
 						>
 							{faq.questionEn}
 						</h4>
 						<p
-							className={`text-xs font-medium ${isOpen ? "text-slate-300" : "text-slate-500"}`}
+							className={`text-xs md:text-sm font-medium ${isOpen ? "text-white" : "text-slate-300"}`}
 						>
 							{faq.questionBn}
 						</p>
 					</div>
 					<div
-						className={`p-2 rounded-full transition-transform duration-300 shrink-0 ${isOpen ? "bg-emerald-500/20 rotate-180 text-emerald-400" : "bg-white/5 text-slate-400"}`}
+						className={`p-2 rounded-full transition-transform duration-300 shrink-0 ${isOpen ? "bg-blue-500/20 rotate-180 text-blue-400" : "bg-white/5 text-slate-300"}`}
 					>
 						<ChevronDown className="w-5 h-5" />
 					</div>
@@ -156,11 +150,11 @@ export default function FAQSection() {
 					}`}
 				>
 					<div className="overflow-hidden">
-						<div className="p-6 pt-0 border-t border-white/5 mt-2">
-							<p className="text-sm text-slate-300 leading-relaxed mb-3">
+						<div className="p-4 pt-3">
+							<p className="text-xs md:text-sm text-white leading-relaxed mb-2">
 								{faq.answerEn}
 							</p>
-							<p className="text-xs text-slate-400 leading-relaxed font-medium border-l-2 border-emerald-500/30 pl-3">
+							<p className="text-xs md:text-sm text-slate-300 leading-relaxed font-medium">
 								{faq.answerBn}
 							</p>
 						</div>
@@ -173,50 +167,37 @@ export default function FAQSection() {
 	return (
 		<section
 			id="faq"
-			className="pt-16 md:pt-24 bg-slate-950 relative border-t border-white/5"
+			className="pt-16 md:pt-24 relative"
 		>
 			{/* Subtle Background Elements */}
 			<div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-200 h-100 bg-emerald-900/10 blur-[150px] rounded-full pointer-events-none" />
 
 			<div className="px-4 lg:px-24 2xl:px-48 relative z-10">
 				{/* Section Header */}
-				<div className="text-center max-w-3xl mx-auto mb-16">
-					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
+				<div className="text-center max-w-3xl mx-auto mb-8">
+					<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 text-xs font-bold uppercase tracking-wider mb-2 md:mb-4">
 						<HelpCircle className="w-4 h-4" /> Client Resources
 					</div>
-					<h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+					<h2 className="text-2xl md:text-4xl font-extrabold mb-2 tracking-tight">
 						Frequently Asked{" "}
-						<span className="bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent">
 							Questions
 						</span>
 					</h2>
-					<p className="text-slate-400 text-sm font-medium">
+					<p className="text-slate-600 text-sm md:text-base font-medium">
 						Everything you need to know about investing with ANB
 						Unique Real State.
 					</p>
 				</div>
 
 				{/* Two-Column Grid Layout */}
-				<div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-					{/* Left Column (5 items) */}
-					<div className="flex flex-col gap-4">
-						{leftColumnFaqs.map((faq) => (
-							<FaqCard
-								key={faq.id}
-								faq={faq}
-							/>
-						))}
-					</div>
-
-					{/* Right Column (5 items) */}
-					<div className="flex flex-col gap-4">
-						{rightColumnFaqs.map((faq) => (
-							<FaqCard
-								key={faq.id}
-								faq={faq}
-							/>
-						))}
-					</div>
+				<div className="grid lg:grid-cols-2 gap-2 lg:gap-4 items-start">
+					{faqs.map((faq) => (
+						<FaqCard
+							key={faq.id}
+							faq={faq}
+						/>
+					))}
 				</div>
 			</div>
 		</section>

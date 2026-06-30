@@ -41,7 +41,7 @@ export default function LandownerCorner() {
 					{/* Left Column: Value Proposition */}
 					<div className="flex flex-col gap-4 md:gap-6">
 						<div>
-							<div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3 lg:mb-6">
+							<div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-3 lg:mb-6">
 								<Handshake className="w-4 h-4" /> Joint Venture
 							</div>
 							<h2 className="text-2xl md:text-4xl font-extrabold mb-2 tracking-tight leading-tight">

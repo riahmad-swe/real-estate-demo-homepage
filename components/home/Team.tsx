@@ -24,7 +24,7 @@ const leaders = [
 			},
 		],
 		image: "/images/md-abdus-sobhan.jpg",
-		email: "contact@anbuniquerealestate.com",
+		email: "anbuniquerealestate@gmail.com",
 	},
 	{
 		id: 2,
@@ -45,7 +45,7 @@ const leaders = [
 				textBn: "ফেলো মেম্বার, আইএবি",
 			},
 		],
-		email: "contact@anbuniquerealestate.com",
+		email: "anbuniquerealestate@gmail.com",
 	},
 	{
 		id: 3,
@@ -67,7 +67,7 @@ const leaders = [
 			},
 		],
 		image: "/images/mst-suriya-parvin.jpg",
-		email: "contact@anbuniquerealestate.com",
+		email: "anbuniquerealestate@gmail.com",
 	},
 	{
 		id: 4,
@@ -88,7 +88,7 @@ const leaders = [
 				textBn: "টপ মার্কেটিং লিডার অ্যাওয়ার্ড ২০২৫",
 			},
 		],
-		email: "contact@anbuniquerealestate.com",
+		email: "anbuniquerealestate@gmail.com",
 	},
 	{
 		id: 5,
